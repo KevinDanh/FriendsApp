@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import Login from '../../components/Login/Login';
 function Home() {
 	return (
 		<div>
