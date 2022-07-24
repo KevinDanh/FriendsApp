@@ -8,6 +8,8 @@ import {
 } from '@mui/material';
 import React from 'react';
 
+// import makeStyles from './style';
+
 function Login() {
 	// *********** TODO ***************************
 	const handleSubmit = () => {};
@@ -15,8 +17,10 @@ function Login() {
 	//when called will navigate to sign up page
 	const switchMode = () => {};
 
+	// const styles = makeStyles();
+
 	return (
-		<Container maxWidth="xs">
+		<Container component="main" maxWidth="xs">
 			<Paper
 				sx={{
 					mt: 2,
