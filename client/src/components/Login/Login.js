@@ -20,11 +20,11 @@ function Login() {
 	// const styles = makeStyles();
 
 	return (
-		<Container component="main" maxWidth="xs">
+		<Container maxWidth="xs">
 			<Paper
 				sx={{
-					mt: 2,
-					padding: 2,
+					mt: 10,
+					padding: 3,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
@@ -62,7 +62,12 @@ function Login() {
 						Sign In
 					</Button>
 				</form>
-				<Grid container>
+				<Grid
+					container
+					sx={{
+						mt: 2,
+					}}
+				>
 					<Grid item>
 						<Button variant="text" size="small" onClick={switchMode}>
 							Don't have an account? Sign up
