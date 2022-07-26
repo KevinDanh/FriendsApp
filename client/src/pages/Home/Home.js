@@ -1,11 +1,13 @@
 import React from 'react';
 import './home.css';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Home() {
 	const navigate = useNavigate();
 	return (
 		<div className="brownContainer">
+			<Navbar />
 			<div className="orangeContainer">
 				<div className="whiteContainer">
 					<h1 className="titleContainer1">Friends</h1>
