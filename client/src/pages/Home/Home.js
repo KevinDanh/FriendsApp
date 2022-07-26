@@ -25,8 +25,8 @@ function Home() {
 			<div className="brownContainer">
 				<div className="orangeContainer">
 					<div className="whiteContainer">
-						<div onClick={() => setClicked(false)} className="titleContainer1">
-							<h1> Friends </h1>
+						<div onClick={() => setClicked(false)}>
+							<h1 className="titleContainer1"> Friends </h1>
 						</div>
 						{!clicked ? 
 							<div className="sloganContainer1">
