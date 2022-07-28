@@ -2,7 +2,7 @@
     margin-top: 0;
 }
 
-.signup_button{
+.login_button{
     display: flex !important;
     width: 100% !important;
     height:  50% !important;
@@ -15,7 +15,7 @@
     margin-top: 10px !important;
 }
 
-.signup_button:hover{
+.login_button:hover{
     box-shadow: inset 30vw 0 0 0 #73bda8 !important;
     cursor: pointer !important;
     color:#6f5643 !important;
