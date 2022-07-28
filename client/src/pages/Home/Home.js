@@ -1,32 +1,47 @@
-import React from 'react';
+import { React, useState } from 'react';
 import './home.css';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../../components/Navbar/Navbar';
+import Login from '../../components/Login/Login';
+import Signup from '../../components/Signup/Signup';
 
 function Home() {
-	const navigate = useNavigate();
+	const [clicked, setClicked] = useState(false);
+	const [component, setComponent] = useState('');
+	const displayLogin = (e) => {
+		e.preventDefault();
+		setClicked(true);
+		setComponent(<Login />);
+	};
+	const displayRegister = (e) => {
+		e.preventDefault();
+		setClicked(true);
+		setComponent(<Signup />);
+	};
+
 	return (
-		<div className="brownContainer">
-			<Navbar />
-			<div className="orangeContainer">
-				<div className="whiteContainer">
-					<h1 className="titleContainer1">Friends</h1>
-					<h1 className="titleContainer2">Friends</h1>
-					<div className="sloganContainer1">
-						<p>Plan.</p>
-						<p>Schedule.</p>
-						<p>HangOut.</p>
-					</div>
-					<div className="sloganContainer2">
-						<p>Plan.</p>
-						<p>Schedule.</p>
-						<p>HangOut.</p>
-					</div>
-					<div className="buttonContainer">
-						<button className="registerButton">REGISTER</button>
-						<button className="loginButton" onClick={() => navigate('/login')}>
-							LOGIN
-						</button>
+		<div className="background">
+			<div className="brownContainer">
+				<div className="orangeContainer">
+					<div className="whiteContainer">
+						<div onClick={() => setClicked(false)}>
+							<h1 className="titleContainer1"> Friends </h1>
+						</div>
+						{!clicked ? (
+							<div className="sloganContainer1">
+								<p>Plan.</p>
+								<p>Schedule.</p>
+								<p>HangOut.</p>
+							</div>
+						) : (
+							component
+						)}
+						<div className="buttonContainer">
+							<button onClick={displayRegister} className="registerButton">
+								SIGN UP
+							</button>
+							<button onClick={displayLogin} className="loginButton">
+								LOGIN
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

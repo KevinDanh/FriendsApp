@@ -7,9 +7,7 @@ import {
 	Button,
 } from '@mui/material';
 import React from 'react';
-import './Login.css';
-
-// import makeStyles from './style';
+import './Signup.css';
 
 function Login() {
 	// *********** TODO ***************************
@@ -18,20 +16,18 @@ function Login() {
 	//when called will navigate to sign up page
 	const switchMode = () => {};
 
-	// const styles = makeStyles();
-
 	return (
 		<Container maxWidth="xs">
-			<Paper
+			<Paper className="container"
 				sx={{
-					mt: 10,
-					padding: 3,
+					mt: 2,
+					padding: 2,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
 				}}
 			>
-				<Typography variant="h5">Login</Typography>
+				<Typography variant="h5">Sign Up</Typography>
 				<form
 					style={{
 						width: '100%',
@@ -40,6 +36,15 @@ function Login() {
 					onSubmit={handleSubmit}
 				>
 					<Grid container direction={'column'} spacing={2}>
+						<Grid item>
+							<TextField
+								id="username"
+								label="Username"
+								type="text"
+								fullWidth
+								required
+							/>
+						</Grid>
 						<Grid item>
 							<TextField
 								id="email"
@@ -58,23 +63,25 @@ function Login() {
 								required
 							/>
 						</Grid>
+                        <Grid item xs>
+							<TextField
+								id="confirm_password"
+								label="Confirm Password"
+								type="password"
+								fullWidth
+								required
+							/>
+						</Grid>
 					</Grid>
-					<Button type="submit" className= "login_button" fullWidth variant="contained">
-						Login
-					</Button>
-				</form>
-				<Grid
-					container
-					sx={{
-						mt: 2,
-					}}
-				>
-					<Grid item>
+					<Grid item xs>
+						<Button className="signup_button" type="submit">
+							Sign Up
+						</Button>
 						<Button variant="text" size="small" onClick={switchMode}>
-							Don't have an account? Sign up.
+							Already have an account? Login Now.
 						</Button>
 					</Grid>
-				</Grid>
+				</form>
 			</Paper>
 		</Container>
 	);
