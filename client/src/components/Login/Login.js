@@ -7,6 +7,7 @@ import {
 	Button,
 } from '@mui/material';
 import React from 'react';
+import './Login.css';
 
 function Login() {
 	// *********** TODO ***************************
@@ -26,7 +27,7 @@ function Login() {
 					alignItems: 'center',
 				}}
 			>
-				<Typography variant="h5">Sign In</Typography>
+				<Typography variant="h5">Login</Typography>
 				<form
 					style={{
 						width: '100%',
@@ -54,14 +55,14 @@ function Login() {
 							/>
 						</Grid>
 					</Grid>
-					<Button type="submit" fullWidth variant="contained" sx={{ mt: 2 }}>
-						Sign In
+					<Button type="submit" className= "login_button" fullWidth variant="contained">
+						Login
 					</Button>
 				</form>
 				<Grid container>
 					<Grid item>
 						<Button variant="text" size="small" onClick={switchMode}>
-							Don't have an account? Sign up
+							Don't have an account? Sign up.
 						</Button>
 					</Grid>
 				</Grid>

@@ -78,7 +78,7 @@ function Login() {
 							Sign Up
 						</Button>
 						<Button variant="text" size="small" onClick={switchMode}>
-							Don't have an account? Sign up
+							Already have an account? Login Now.
 						</Button>
 					</Grid>
 				</form>
