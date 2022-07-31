@@ -24,8 +24,13 @@ function Login() {
 		<Container maxWidth="xs">
 			<Paper
 				sx={{
+<<<<<<< HEAD
 					mt: 10,
 					padding: 3,
+=======
+					mt: 20,
+					padding: 2,
+>>>>>>> main
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
