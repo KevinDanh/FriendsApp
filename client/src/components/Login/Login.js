@@ -9,6 +9,8 @@ import {
 import React from 'react';
 import './Login.css';
 
+// import makeStyles from './style';
+
 function Login() {
 	// *********** TODO ***************************
 	const handleSubmit = () => {};
@@ -16,11 +18,15 @@ function Login() {
 	//when called will navigate to sign up page
 	const switchMode = () => {};
 
+	// const styles = makeStyles();
+
 	return (
 		<Container maxWidth="xs">
 			<Paper
 				sx={{
 					mt: 10,
+					padding: 3,
+					mt: 20,
 					padding: 2,
 					display: 'flex',
 					flexDirection: 'column',
@@ -59,7 +65,12 @@ function Login() {
 						Login
 					</Button>
 				</form>
-				<Grid container>
+				<Grid
+					container
+					sx={{
+						mt: 2,
+					}}
+				>
 					<Grid item>
 						<Button variant="text" size="small" onClick={switchMode}>
 							Don't have an account? Sign up.
