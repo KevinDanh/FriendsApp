@@ -26,8 +26,6 @@ function Login() {
 				sx={{
 					mt: 10,
 					padding: 3,
-					mt: 20,
-					padding: 2,
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
