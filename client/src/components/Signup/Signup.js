@@ -20,7 +20,7 @@ function Login() {
 		<Container maxWidth="xs">
 			<Paper className="container"
 				sx={{
-					mt: 20,
+					mt: 5,
 					padding: 2,
 					display: 'flex',
 					flexDirection: 'column',
