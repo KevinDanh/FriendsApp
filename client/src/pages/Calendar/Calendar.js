@@ -1,12 +1,22 @@
-import { React } from 'react';
+import { React, useState } from 'react';
+import { getMonth } from './Util';
+import CalendarHeader from '../../components/Calendar/CalendarHeader';
+import Sidebar from '../../components/Calendar/Sidebar';
+import Month from '../../components/Calendar/Month';
 
-const Calendar = () => {
+function Calendar() {
+    const [currentMonth, setCurrentMonth] = useState(getMonth());
     return (
-        <div>
-            Calendar Page
-        </div>
-
+        <React.Fragment>
+            <div className = 'h-screen flex flex-columns'>
+                <CalendarHeader/>
+                <div className = 'flex flex-1'>
+                    <Sidebar/>
+                    <Month month={currentMonth}/>
+                </div>
+            </div> 
+        </React.Fragment>
     )
 }
 
-export default Calendar
+export default Calendar;
