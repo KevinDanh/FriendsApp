@@ -1,13 +1,14 @@
-import { React, useState } from 'react';
+import { React, Fragment, useState } from 'react';
 import { getMonth } from './Util';
 import CalendarHeader from '../../components/Calendar/CalendarHeader';
 import Sidebar from '../../components/Calendar/Sidebar';
 import Month from '../../components/Calendar/Month';
+import './calendar.css';
 
 function Calendar() {
     const [currentMonth, setCurrentMonth] = useState(getMonth());
     return (
-        <React.Fragment>
+        <Fragment>
             <div className = 'h-screen flex flex-columns'>
                 <CalendarHeader/>
                 <div className = 'flex flex-1'>
@@ -15,7 +16,7 @@ function Calendar() {
                     <Month month={currentMonth}/>
                 </div>
             </div> 
-        </React.Fragment>
+        </Fragment>
     )
 }
 
