@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { React, useContext } from 'react'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -30,6 +31,9 @@ export default function CalendarHeader() {
           <ChevronRightIcon/>
         </span>
       </button>
+      <h2 className='ml-4 text-5xl text-yellow-600 font-bold'>
+        {dayjs(new Date(dayjs().year(), monthIndex)).format("MMMM YYYY")}
+      </h2>
     </header>
   )
 }
