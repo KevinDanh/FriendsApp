@@ -9,7 +9,7 @@ function Calendar() {
     const [currentMonth, setCurrentMonth] = useState(getMonth());
     return (
         <Fragment>
-            <div className = 'h-screen flex flex-columns'>
+            <div className = 'h-screen flex flex-col'>
                 <CalendarHeader/>
                 <div className = 'flex flex-1'>
                     <Sidebar/>
