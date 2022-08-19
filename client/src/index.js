@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom/client';
 // import { createStore, compose } from 'redux';
 import './index.css';
 import App from './App';
+import ContextWrapper from './components/Calendar/context/ContextWrapper';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
+  <React.StrictMode>
+    <ContextWrapper>
+      <App />
+    </ContextWrapper>
+  </React.StrictMode>
 );
