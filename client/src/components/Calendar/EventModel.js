@@ -60,7 +60,7 @@ export default function EventModel() {
               />
             </div>
             <div className="flex flex-row">
-            <span className="material-icons-outlined text-gray-400 pt-1 pr-9">
+            <span className="material-icons-outlined text-gray-400  pr-9">
               <BookmarkBorderIcon />
             </span>
             <div className="flex gap-x-5">
@@ -81,6 +81,12 @@ export default function EventModel() {
             </div>
           </div>
         </div>
+        <footer className="flex justify-end broder-t p-3 mt-5">
+            <button type="submit" className="bg-yellow-600 hover:bg-yellow-500 px-6 py-2 rounded text-white">
+                Save
+            </button>
+
+        </footer>
       </form>
     </div>
   );
