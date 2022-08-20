@@ -1,11 +1,13 @@
-import {React, useContext} from 'react'
+import {React, useContext, useState} from 'react'
 import DragHandleIcon from '@mui/icons-material/DragHandle';
 import CloseIcon from '@mui/icons-material/Close';
 import GlobalContext from './context/GlobalContext';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 
 export default function EventModel() {
-    const {setShowEventModel} = useContext(GlobalContext)
+    const [title, setTitle] = useState('')
+    const {setShowEventModel, daySelected} = useContext(GlobalContext);
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
       <form className="bg-white rounded-lg shadow-2xl w-1/4">
@@ -19,6 +21,24 @@ export default function EventModel() {
             </span>
           </button>
         </header>
+        <div className='p-3'>
+            <div className='grid grid-cols-1/5 items-end gap-y-7'>
+                <div></div>
+                <input 
+                type='text' 
+                name='title' 
+                placeholder='Add Title' 
+                value={title}
+                required
+                className='pt-3 border-0 text-black-600 text-xl font-semibold pb-2 w-full border-b-2 border-black-600 focus:outline-none focus:ring-0 focus:border-yellow-600'
+                onChange={(e)=> setTitle(e.target.value)}
+                />
+                <span className='material-icons-outlined text-gray-400'>
+                    <ScheduleIcon/>
+                </span>
+                <p>{daySelected.format("dddd, MMMM DD")}</p>
+            </div>
+        </div>
       </form>
     </div>
   );
