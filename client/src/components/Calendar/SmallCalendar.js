@@ -14,7 +14,7 @@ export default function SmallCalendar() {
         setCurrentMonth(getMonth(currentMonthIdx))
     }, [currentMonthIdx]);
 
-    const { monthIndex } = useContext(GlobalContext)
+    const { monthIndex, setSmallCalendarMonth, setDaySelected, daySelected } = useContext(GlobalContext)
 
     useEffect(() => {
         setCurrentMonthIdx(monthIndex)
@@ -31,8 +31,11 @@ export default function SmallCalendar() {
         const format = 'DD-MM-YY';
         const nowDay = dayjs().format(format);
         const currDay = day.format(format);
+        const slcDay = daySelected && daySelected.format(format);
         if(nowDay === currDay){
             return 'bg-yellow-600 rounded-full text-white'
+        }else if (currDay === slcDay) {
+            return 'bg-yellow-100 rounded-full text-yellow-600 font-bold'
         }else{
             return '';
         }
@@ -66,7 +69,12 @@ export default function SmallCalendar() {
         {currentMonth.map((row, i) => (
           <Fragment key={i}>
             {row.map((day, idx) => (
-              <button key={idx} className={`py-1 w-full ${getDayClass(day)}`}>
+              <button 
+              key={idx}
+               onClick={()=> {
+                setSmallCalendarMonth(currentMonthIdx);
+                setDaySelected(day)
+                }} className={`py-1 w-full ${getDayClass(day)}`}>
                 <span className="text-sm">{day.format("D")}</span>
               </button>
             ))}
