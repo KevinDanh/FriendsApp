@@ -7,13 +7,27 @@ import SegmentIcon from "@mui/icons-material/Segment";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import CheckIcon from "@mui/icons-material/Check";
 
-const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple",];
+const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple"];
 
 export default function EventModel() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [selectedLabel, setSelectedLabel] = useState(labelsClasses[0]);
-  const { setShowEventModel, daySelected } = useContext(GlobalContext);
+  const { setShowEventModel, daySelected, dispatchCalEvent } = useContext(GlobalContext);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const calendarEvent = {
+        title,
+        description,
+        label: selectedLabel,
+        day: daySelected.valueOf(),
+        id: Date.now(),
+    }
+    dispatchCalEvent({type: 'push', payload: calendarEvent});
+    setShowEventModel(false);
+  }
+
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
       <form className="bg-white rounded-lg shadow-2xl w-1/4">
@@ -63,6 +77,7 @@ export default function EventModel() {
             <span className="material-icons-outlined text-gray-400  pr-9">
               <BookmarkBorderIcon />
             </span>
+            {/* <div class="font-bold text-gray-700 rounded-full bg-green-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div> */}
             <div className="flex gap-x-5">
               {labelsClasses.map((lblClass, i) => (
                 <span
@@ -82,7 +97,10 @@ export default function EventModel() {
           </div>
         </div>
         <footer className="flex justify-end broder-t p-3 mt-5">
-            <button type="submit" className="bg-yellow-600 hover:bg-yellow-500 px-6 py-2 rounded text-white">
+            <button 
+            type="submit"
+            onClick={handleSubmit} 
+            className="bg-yellow-600 hover:bg-yellow-500 px-6 py-2 rounded text-white">
                 Save
             </button>
 
