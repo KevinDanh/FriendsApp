@@ -42,6 +42,31 @@ export default function Day({ day, rowIdx}) {
                 </div>
             ))}
             {/* {dayEvents.map((evt, idx) => (
+                <div key ={idx} className = {`bg-indigo-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
+                    {evt.title}
+                </div>
+            ))}
+            {dayEvents.map((evt, idx) => (
+                <div key ={idx} className = {`bg-gray-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
+                    {evt.title}
+                </div>
+            ))}
+            {dayEvents.map((evt, idx) => (
+                <div key ={idx} className = {`bg-blue-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
+                    {evt.title}
+                </div>
+            ))}
+            {dayEvents.map((evt, idx) => (
+                <div key ={idx} className = {`bg-green-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
+                    {evt.title}
+                </div>
+            ))}
+            {dayEvents.map((evt, idx) => (
+                <div key ={idx} className = {`bg-red-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
+                    {evt.title}
+                </div>
+            ))}
+            {dayEvents.map((evt, idx) => (
                 <div key ={idx} className = {`bg-purple-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}>
                     {evt.title}
                 </div>

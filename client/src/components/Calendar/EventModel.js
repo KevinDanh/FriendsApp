@@ -6,6 +6,7 @@ import ScheduleIcon from "@mui/icons-material/Schedule";
 import SegmentIcon from "@mui/icons-material/Segment";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import CheckIcon from "@mui/icons-material/Check";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple",];
 
@@ -40,7 +41,7 @@ export default function EventModel() {
 
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
-      <form className="bg-white rounded-lg shadow-2xl w-1/4">
+      <form className="bg-white rounded-lg shadow-2xl w-auto">
         <header className="bg-gray-100 px-4 py-2 flex justify-between items-center">
           <span className="material-icons-outlined text-gray-400">
             <DragHandleIcon />
@@ -54,18 +55,15 @@ export default function EventModel() {
                     });
                     setShowEventModel(false);
                 }}
-                className = 'material-icons-outlined text-gray-400 cursor-pointer'>
-                    delete
+                className = 'material-icons-outlined text-gray-400 cursor-pointer ml-56'>
+                    <DeleteIcon/>
                 </span>
             )}
           <button onClick={() => setShowEventModel(false)}>
-            <span className="material-icons-outlined text-gray-400">
-              <CloseIcon />
-            </span>
           </button>
           </div>
           <button onClick={() => setShowEventModel(false)}>
-            <span className="material-icons-outlined text-gray-400">
+            <span className="material-icons-outlined text-gray-400 ">
               <CloseIcon />
             </span>
           </button>
@@ -106,7 +104,12 @@ export default function EventModel() {
             <span className="material-icons-outlined text-gray-400  pr-9">
               <BookmarkBorderIcon />
             </span>
-            {/* <div class="font-bold text-gray-700 rounded-full bg-green-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div> */}
+            {/* <div class="font-bold text-gray-700 rounded-full bg-indigo-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div>
+            <div class="font-bold text-gray-700 rounded-full bg-gray-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div>
+            <div class="font-bold text-gray-700 rounded-full bg-blue-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div>
+            <div class="font-bold text-gray-700 rounded-full bg-green-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div>
+            <div class="font-bold text-gray-700 rounded-full bg-red-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div>
+            <div class="font-bold text-gray-700 rounded-full bg-purple-500 flex items-center justify-center font-mono height: 500px; width: 500px; font-size: 170px;">404</div> */}
             <div className="flex gap-x-5">
               {labelsClasses.map((lblClass, i) => (
                 <span
