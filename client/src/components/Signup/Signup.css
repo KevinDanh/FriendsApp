@@ -20,9 +20,3 @@
     cursor: pointer !important;
     color:#6f5643 !important;
 }
-
-@media only screen and (max-width: 600px) {
-    body {
-      background: lightblue !important;
-    }
-}

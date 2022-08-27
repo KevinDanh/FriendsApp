@@ -9,7 +9,7 @@ function App() {
 		<Router>
 			<Routes>
 				<Route path="/" exact element={<Home />} />
-				<Route path="/calendar" element={<Calendar />} />
+				<Route path="/calendar" exact element={<Calendar />} />
 				<Route path="/login" exact element={<Login />} />
 			</Routes>
 		</Router>
