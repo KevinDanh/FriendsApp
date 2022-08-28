@@ -1,21 +1,21 @@
 import { React, useState } from 'react';
 import './home.css';
 import Login from '../../components/Login/Login';
-import Signup from '../../components/Signup/Signup';
+// import Signup from '../../components/Signup/Signup';
 
 function Home() {
 	const [clicked, setClicked] = useState(false);
-	const [component, setComponent] = useState('');
-	const displayLogin = (e) => {
-		e.preventDefault();
-		setClicked(true);
-		setComponent(<Login />);
-	};
-	const displayRegister = (e) => {
-		e.preventDefault();
-		setClicked(true);
-		setComponent(<Signup />);
-	};
+	// const [component, setComponent] = useState('');
+	// const displayLogin = (e) => {
+	// 	e.preventDefault();
+	// 	setClicked(true);
+	// 	setComponent(<Login />);
+	// };
+	// const displayRegister = (e) => {
+	// 	e.preventDefault();
+	// 	setClicked(true);
+	// 	setComponent(<Signup />);
+	// };
 
 	return (
 		<div className="background">
@@ -32,15 +32,13 @@ function Home() {
 								<p>HangOut.</p>
 							</div>
 						) : (
-							component
+							//added an empty fragment instead of the componenet fragment
+							<></>
 						)}
 						<div className="buttonContainer">
-							<button onClick={displayRegister} className="registerButton">
-								SIGN UP
-							</button>
-							<button onClick={displayLogin} className="loginButton">
-								LOGIN
-							</button>
+							<div className="registerButton">
+								<Login />
+							</div>
 						</div>
 					</div>
 				</div>

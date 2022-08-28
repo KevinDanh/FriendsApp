@@ -1,86 +1,30 @@
-import {
-	Paper,
-	Container,
-	Typography,
-	TextField,
-	Grid,
-	Button,
-} from '@mui/material';
 import React from 'react';
+import { Container, Button } from '@mui/material';
+import { useGoogleLogin } from '@react-oauth/google';
 import './Login.css';
-
-// import makeStyles from './style';
 
 function Login() {
 	// *********** TODO ***************************
-	const handleSubmit = () => {};
+	const googleSuccess = () => {};
+	const googleFailure = () => {};
 
-	//when called will navigate to sign up page
-	const switchMode = () => {};
-
-	// const styles = makeStyles();
+	const login = useGoogleLogin({
+		onSuccess: googleSuccess,
+		onFailure: googleFailure,
+		flow: 'auth-code',
+	});
 
 	return (
-		<Container maxWidth="xs">
-			<Paper
-				sx={{
-<<<<<<< HEAD
-					mt: 10,
-					padding: 3,
-=======
-					mt: 20,
-					padding: 2,
->>>>>>> main
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center',
-				}}
+		<Container maxWidth="md">
+			<Button
+				sx={{ backgroundColor: 'brown' }}
+				fullWidth
+				onClick={login}
+				disabled={false}
+				variant="contained"
 			>
-				<Typography variant="h5">Login</Typography>
-				<form
-					style={{
-						width: '100%',
-						marginTop: 10,
-					}}
-					onSubmit={handleSubmit}
-				>
-					<Grid container direction={'column'} spacing={2}>
-						<Grid item>
-							<TextField
-								id="email"
-								label="Email Address"
-								type="email"
-								fullWidth
-								required
-							/>
-						</Grid>
-						<Grid item xs>
-							<TextField
-								id="password"
-								label="Password"
-								type="password"
-								fullWidth
-								required
-							/>
-						</Grid>
-					</Grid>
-					<Button type="submit" className= "login_button" fullWidth variant="contained">
-						Login
-					</Button>
-				</form>
-				<Grid
-					container
-					sx={{
-						mt: 2,
-					}}
-				>
-					<Grid item>
-						<Button variant="text" size="small" onClick={switchMode}>
-							Don't have an account? Sign up.
-						</Button>
-					</Grid>
-				</Grid>
-			</Paper>
+				Sign in with Google
+			</Button>
 		</Container>
 	);
 }
