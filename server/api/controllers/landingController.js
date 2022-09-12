@@ -1,10 +1,21 @@
 // Landing Page methods
 exports.welcome = (req, res, next) => {
-    json = {
-        message: "Hellow Welcome to landing Page",
-        possibleRoutes: "\'/\' \n '\/user\'"
-    }
+    html = `
+        <html>
+            <head>
+                <title> Landing Routes </title>
+            </head>
+            <body style=" width: 100px; height: fit-content; border: 2px solid white; background-color: black; color:lime">
+                <h3 style="text-align: center;">Landing Page</h3>
+                <h5 style="text-align: center;">Possible Routes</h5>
+                <ol>
+                    <li> / </li>
+                    <li> /user </li>
+                </ol>
+            </body>
+        </html>
+    `;
     res.send(
-        '<html><head><title>LANDING PAGE</title><body style="background-color: black; color: lime;"></body>Hi</head></html>'
+        html
     );
 }
