@@ -16,7 +16,7 @@ function Login() {
 
 	return (
 		<Container maxWidth="md">
-			<Button
+			<Button class="loginButton"
 				sx={{ backgroundColor: 'brown' }}
 				fullWidth
 				onClick={login}

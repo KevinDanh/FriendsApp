@@ -5,18 +5,6 @@ import Login from '../../components/Login/Login';
 
 function Home() {
 	const [clicked, setClicked] = useState(false);
-	// const [component, setComponent] = useState('');
-	// const displayLogin = (e) => {
-	// 	e.preventDefault();
-	// 	setClicked(true);
-	// 	setComponent(<Login />);
-	// };
-	// const displayRegister = (e) => {
-	// 	e.preventDefault();
-	// 	setClicked(true);
-	// 	setComponent(<Signup />);
-	// };
-
 	return (
 		<div className="background">
 			<div className="brownContainer">
@@ -36,9 +24,7 @@ function Home() {
 							<></>
 						)}
 						<div className="buttonContainer">
-							<div className="registerButton">
-								<Login />
-							</div>
+							<Login />
 						</div>
 					</div>
 				</div>
